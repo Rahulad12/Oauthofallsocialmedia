@@ -35,7 +35,7 @@
 <h2>Installation</h2>
 <ol>
   <li>Clone this repository:</li>
-  <pre><code>git clone https://github.com/your-username/your-repository.git</code></pre>
+  <pre><code>git clone https://github.com/Rahulad12/Oauthofallsocialmedia.git</code></pre>
 
   <li>Navigate to the project directory:</li>
   <pre><code>cd your-repository</code></pre>
