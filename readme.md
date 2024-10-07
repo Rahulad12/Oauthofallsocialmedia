@@ -55,7 +55,7 @@ FACEBOOK_CALLBACK_URL=http://localhost:3000/auth/facebook/callback
   </code></pre>
 
   <li>Start the server:</li>
-  <pre><code>node server.js</code></pre>
+  <pre><code>npm run server || npm start</code></pre>
 
   <li>Open your browser and visit <a href="http://localhost:3000">http://localhost:3000</a></li>
 </ol>
