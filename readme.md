@@ -30,6 +30,9 @@
   <li>Node.js installed</li>
   <li>Facebook Developer App with valid credentials (<a href="https://developers.facebook.com/">Facebook Developer Console</a>)</li>
   <li>Google Developer App with valid credentials (<a href="https://console.cloud.google.com/">Google Developer Console</a>)</li>
+  <li>pinterest Developer App with valid credentials (<a href="https://developers.pinterest.com/">pinterest Developer Console</a>)</li>
+  <li>twitter Developer App with valid credentials (<a href="https://developer.twitter.com/en/apps">twitter Developer Console</a>)</li>
+  <li>instagram Developer App with valid credentials (<a href="https://www.instagram.com/developer/">instagram Developer Console</a>)</li>
 </ul>
 
 <h2>Installation</h2>
@@ -82,6 +85,11 @@ INSTAGRAM_CALLBACK_URL= http://localhost:3000/auth/instagram/callback
 <ul>
   <li><strong>Google Authentication:</strong> <a href="/auth/google">Authenticate with Google</a></li>
   <li><strong>Facebook Authentication:</strong> <a href="/auth/facebook">Authenticate with Facebook</a></li>
+  <li><strong>Pinterest Authentication:</strong> <a href="/auth/pinterest">Authenticate with Pinterest</a></li>
+  <li><strong>Twitter Authentication:</strong> <a href="/auth/twitter">Authenticate with Twitter</a></li>
+  <li><strong>Instagram Authentication:</strong> <a href="/auth/instagram">Authenticate with Instagram</a></li>
+  <li><strong>Instagram Authentication:</strong> <a href="/auth/youtube">Authenticate with Instagram</a></li>
+  
 </ul>
 
 <p>After successful authentication, users will be redirected to the <code>/dashboard</code> page, where they can see their profile name and logout if needed.</p>
@@ -122,6 +130,47 @@ INSTAGRAM_CALLBACK_URL= http://localhost:3000/auth/instagram/callback
       <td>Handles Facebook OAuth callback</td>
     </tr>
     <tr>
+      <td><code>/auth/pinterest</code></td>
+      <td>GET</td>
+      <td>Redirects to Pinterest for authentication</td>
+    </tr>
+    <tr>
+      <td><code>/auth/pinterest/callback</code></td>
+      <td>GET</td>
+      <td>Handles Pinterest OAuth callback</td>
+    </tr>
+    <tr>
+      <td><code>/auth/twitter</code></td>
+      <td>GET</td>
+      <td>Redirects to Twitter for authentication</td>
+    </tr>
+    <tr>
+      <td><code>/auth/twitter/callback</code></td>
+      <td>GET</td>
+      <td>Handles Twitter OAuth callback</td>
+    </tr>
+    <tr>
+      <td><code>/auth/instagram</code></td>
+      <td>GET</td>
+      <td>Redirects to Instagram for authentication</td>
+    </tr>
+    <tr>
+      <td><code>/auth/instagram/callback</code></td>
+      <td>GET</td>
+      <td>Handles Instagram OAuth callback</td>
+    </tr>
+    <tr>
+      <td><code>/auth/youtube</code></td>
+      <td>GET</td>
+      <td>Redirects to Youtube for authentication</td>
+    </tr>
+    <tr>
+      <td><code>/auth/youtube/callback</code></td>
+      <td>GET</td>
+      <td>Handles Youtube OAuth callback</td>
+    </tr>
+
+    <tr>
       <td><code>/dashboard</code></td>
       <td>GET</td>
       <td>Protected route, accessible only to authenticated users</td>
@@ -143,6 +192,17 @@ INSTAGRAM_CALLBACK_URL= http://localhost:3000/auth/instagram/callback
   <li><strong>FACEBOOK_CLIENT_ID</strong>: Your Facebook OAuth Client ID</li>
   <li><strong>FACEBOOK_CLIENT_SECRET</strong>: Your Facebook OAuth Client Secret</li>
   <li><strong>FACEBOOK_CALLBACK_URL</strong>: Your Facebook OAuth Callback URL</li>
+  <li><strong>PINTEREST_CLIENT_ID</strong>: Your Pinterest OAuth Client ID</li>
+  <li><strong>PINTEREST_CLIENT_SECRET</strong>: Your Pinterest OAuth Client Secret</li>
+  <li><strong>PINTEREST_CALLBACK_URL</strong>: Your Pinterest OAuth Callback URL</li>
+  <li><strong>TWITTER_CLIENT_ID</strong>: Your Twitter OAuth Client ID</li>
+  <li><strong>TWITTER_CLIENT_SECRET</strong>: Your Twitter OAuth Client Secret</li>
+  <li><strong>TWITTER_CALLBACK_URL</strong>: Your Twitter OAuth Callback URL</li>
+  <li><strong>INSTAGRAM_CLIENT_ID</strong>: Your Instagram OAuth Client ID</li>
+  <li><strong>INSTAGRAM_CLIENT_SECRET</strong>: Your Instagram OAuth Client Secret</li>
+  <li><strong>INSTAGRAM_CALLBACK_URL</strong>: Your Instagram OAuth Callback URL</li>
+
+  
 </ul>
 
 <h2>License</h2>
