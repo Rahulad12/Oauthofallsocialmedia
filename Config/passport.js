@@ -28,6 +28,8 @@ passport.use(new FacebookStrategy({
     }
   ));
 
+
+
 // Serialize user (save user info in session)
 passport.serializeUser((user, done) => {
   done(null, user);
