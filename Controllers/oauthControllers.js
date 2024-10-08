@@ -2,7 +2,7 @@ const passport = require('passport');
 
 // Home route (landing page)
 exports.home = (req, res) => {
-  res.send('<a href="/auth/google">Authenticate with Google</a> | <a href="/auth/facebook">Authenticate with Facebook</a>');
+  res.send('<a href="/auth/google">Authenticate with Google</a>  |  <a href="/auth/facebook">Authenticate with Facebook</a>  | <a href="/auth/twitter">Authenticate with Twitter</a>');
 };
 
 // Google OAuth routes
@@ -13,11 +13,19 @@ exports.googleCallbackSuccess = (req, res) => {
 };
 
 // Facebook OAuth routes
-exports.facebookAuth = passport.authenticate('facebook', { scope: ['email'] });
-exports.facebookAuthCallback = passport.authenticate('facebook', { failureRedirect: '/' });
-exports.facebookCallbackSuccess = (req, res) => {
+// exports.facebookAuth = passport.authenticate('facebook', { scope: ['email'] });
+// exports.facebookAuthCallback = passport.authenticate('facebook', { failureRedirect: '/' });
+// exports.facebookCallbackSuccess = (req, res) => {
+//   res.redirect('/dashboard');
+// };
+
+//Twitter OAuth Routes
+exports.twitterAuth = passport.authenticate('twitter');
+exports.twitterAuthCallback = passport.authenticate('twitter', { failureRedirect: '/' });
+exports.twitterCallbackSuccess = (req, res) => {
   res.redirect('/dashboard');
 };
+
 
 // Protected dashboard
 exports.dashboard = (req, res) => {

@@ -10,8 +10,12 @@ router.get('/auth/google', authController.googleAuth);
 router.get('/auth/google/callback', authController.googleAuthCallback, authController.googleCallbackSuccess);
 
 // Facebook OAuth routes
-router.get('/auth/facebook', authController.facebookAuth);
-router.get('/auth/facebook/callback', authController.facebookAuthCallback, authController.facebookCallbackSuccess);
+// router.get('/auth/facebook', authController.facebookAuth);
+// router.get('/auth/facebook/callback', authController.facebookAuthCallback, authController.facebookCallbackSuccess);
+
+//Twitter OAuth routes
+router.get('/auth/twitter', authController.twitterAuth);
+router.get('/auth/twitter/callback', authController.twitterAuthCallback, authController.twitterCallbackSuccess);
 
 // Protected dashboard
 router.get('/dashboard', authController.dashboard);
