@@ -13,11 +13,11 @@ exports.googleCallbackSuccess = (req, res) => {
 };
 
 // Facebook OAuth routes
-// exports.facebookAuth = passport.authenticate('facebook', { scope: ['email'] });
-// exports.facebookAuthCallback = passport.authenticate('facebook', { failureRedirect: '/' });
-// exports.facebookCallbackSuccess = (req, res) => {
-//   res.redirect('/dashboard');
-// };
+exports.facebookAuth = passport.authenticate('facebook', { scope: ['email'] });
+exports.facebookAuthCallback = passport.authenticate('facebook', { failureRedirect: '/' });
+exports.facebookCallbackSuccess = (req, res) => {
+  res.redirect('/dashboard');
+};
 
 //Twitter OAuth Routes
 exports.twitterAuth = passport.authenticate('twitter');
