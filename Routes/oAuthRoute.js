@@ -17,6 +17,11 @@ router.get('/auth/google/callback', authController.googleAuthCallback, authContr
 router.get('/auth/twitter', authController.twitterAuth);
 router.get('/auth/twitter/callback', authController.twitterAuthCallback, authController.twitterCallbackSuccess);
 
+//Instagram OAuth routes
+router.get('/auth/instagram', authController.instagramAuth);
+router.get('/auth/instagram/callback', authController.instagramAuthCallback, authController.instagramCallbackSuccess);
+
+
 // Protected dashboard
 router.get('/dashboard', authController.dashboard);
 

@@ -2,6 +2,7 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const TwitterStrategy = require('passport-twitter').Strategy;
+const InstagramStrategy = require('passport-instagram').Strategy;
 // const FacebookStrategy = require('passport-facebook').Strategy;
 require('dotenv').config();
 
@@ -43,6 +44,20 @@ function(token, tokenSecret, profile, cb) {
 //);
 //}
 )); 
+
+//Instagram OAuth strategy
+passport.use(new InstagramStrategy({
+  clientID: process.env.INSTAGRAM_CLIENT_ID,
+  clientSecret: process.env.INSTAGRAM_CLIENT_SECRET,
+  callbackURL:  process.env.INSTAGRAM_CALLBACK_URL,
+},
+function(accessToken, refreshToken, profile, done) {
+  //User.findOrCreate({ instagramId: profile.id }, function (err, user) {
+    return done(null, profile);
+  }
+//);
+//}
+));
 
 // Serialize user (save user info in session)
 passport.serializeUser((user, done) => {
