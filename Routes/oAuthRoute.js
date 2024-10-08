@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const passport = require("passport");
 
 const authController = require("../Controllers/oauthControllers");
 
-// Google OAuth routes
+//route
 router.get("/", authController.home);
+
+// Google OAuth routes
 router.get("/auth/google", authController.googleAuth);
 router.get(
   "/auth/google/callback",
@@ -30,13 +31,29 @@ router.get(
 );
 
 //pinterst routes
-router.get('/auth/pinterest',
-  authController.pinterestAuth
-);
-router.get('/auth/pinterest/callback',
+router.get("/auth/pinterest", authController.pinterestAuth);
+router.get(
+  "/auth/pinterest/callback",
   authController.pinterestAuthCallback,
   authController.pinterestCallbackSuccess
-)
+);
+
+//Twitter OAuth routes
+router.get("/auth/twitter", authController.twitterAuth);
+router.get(
+  "/auth/twitter/callback",
+  authController.twitterAuthCallback,
+  authController.twitterCallbackSuccess
+);
+
+//Instagram OAuth routes
+router.get("/auth/instagram", authController.instagramAuth);
+router.get(
+  "/auth/instagram/callback",
+  authController.instagramAuthCallback,
+  authController.instagramCallbackSuccess
+);
+
 // Protected dashboard
 router.get("/dashboard", authController.dashboard);
 

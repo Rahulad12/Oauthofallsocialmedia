@@ -20,8 +20,6 @@ app.use(passport.session());
 // Use routes from the auth module
 app.use('/', authRoutes);
 
-
-console.log(process.env.PINTEREST_CALLBACK_URL)
 // Start server
 app.listen(3000, () => {
   console.log('Server started on http://localhost:3000');
