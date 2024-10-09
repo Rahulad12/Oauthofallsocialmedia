@@ -60,18 +60,19 @@ PINTEREST_CLIENT_ID=pinterest-client-id
 PINTEREST_CLIENT_SECRET=pinterest-client-secret
 PINTEREST_CALLBACK_URL=http://localhost:3000/auth/pinterest/callback
 
-
 TWITTER_CLIENT_ID= 'your-twitter-client-id'
 TWITTER_CLIENT_SECRET = 'your-twitter-client-secret'
 TWITTER_CALLBACK_URL = http://localhost:3000/auth/twitter/callback
-
 
 INSTAGRAM_CLIENT_ID= 'your-instagram-client-id'
 INSTAGRAM_CLIENT_SECRET= 'your-instagram-client-secret'
 INSTAGRAM_CALLBACK_URL= http://localhost:3000/auth/instagram/callback
 
+LINKEDIN_CLIENT_ID = 'your-linkedin-client-id'
+LINKEDIN_CLIENT_SECRET = 'your-linkedin-client-secret'
+LINKEDIN_CALLBACK_URL = http://localhost:3000/auth/linkedin/callback
 
-  </code></pre>
+</code></pre>
 
   <li>Start the server:</li>
   <pre><code>npm run server || npm start</code></pre>
@@ -89,6 +90,8 @@ INSTAGRAM_CALLBACK_URL= http://localhost:3000/auth/instagram/callback
   <li><strong>Twitter Authentication:</strong> <a href="/auth/twitter">Authenticate with Twitter</a></li>
   <li><strong>Instagram Authentication:</strong> <a href="/auth/instagram">Authenticate with Instagram</a></li>
   <li><strong>Instagram Authentication:</strong> <a href="/auth/youtube">Authenticate with Instagram</a></li>
+  <li><strong>Linkedin Authentication:</strong> <a href="/auth/linkedin">Authenticate with Linkedin</a></li>
+
   
 </ul>
 
@@ -171,15 +174,30 @@ INSTAGRAM_CALLBACK_URL= http://localhost:3000/auth/instagram/callback
     </tr>
 
     <tr>
+      <td><code>/auth/linkedin</code></td>
+      <td>GET</td>
+      <td>Redirects to Linkedin for authentication</td>
+    </tr>
+    <tr>
+      <td><code>/auth/linkedin/callback</code></td>
+      <td>GET</td>
+      <td>Handles Linkedin OAuth callback</td>
+    </tr>
+
+
+
+    <tr>
       <td><code>/dashboard</code></td>
       <td>GET</td>
       <td>Protected route, accessible only to authenticated users</td>
     </tr>
+
     <tr>
       <td><code>/logout</code></td>
       <td>GET</td>
       <td>Logs out the user and redirects to home</td>
     </tr>
+
   </tbody>
 </table>
 
@@ -201,8 +219,9 @@ INSTAGRAM_CALLBACK_URL= http://localhost:3000/auth/instagram/callback
   <li><strong>INSTAGRAM_CLIENT_ID</strong>: Your Instagram OAuth Client ID</li>
   <li><strong>INSTAGRAM_CLIENT_SECRET</strong>: Your Instagram OAuth Client Secret</li>
   <li><strong>INSTAGRAM_CALLBACK_URL</strong>: Your Instagram OAuth Callback URL</li>
-
-  
+  <li><strong>LINKEDIN_CLIENT_ID </strong>: Your Linkedin OAuth Client ID</li>
+  <li><strong>LINKEDIN_CLIENT_SECRET</strong>: Your Linkedin OAuth Client Secret</li>
+  <li><strong>LINKEDIN_CALLBACK_URL</strong>: Your Linkedin OAuth Callback URL</li>
 </ul>
 
 <h2>License</h2>

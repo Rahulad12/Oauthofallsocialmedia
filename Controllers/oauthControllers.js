@@ -3,7 +3,7 @@ const passport = require("passport");
 // Home route (landing page)
 exports.home = (req, res) => {
   res.send(
-    '<a href="/auth/google">Authenticate with Google</a>  |  <a href="/auth/facebook">Authenticate with Facebook</a>  | <a href="/auth/twitter">Authenticate with Twitter</a>  | <a href="/auth/instagram">Authenticate with Instagram</a> | <a href="/auth/youtube">Authenticate with Youtube</a> | <a href="/auth/pinterest">Authenticate with Pinterest</a>'
+    '<a href="/auth/google">Authenticate with Google</a>  |  <a href="/auth/facebook">Authenticate with Facebook</a>  | <a href="/auth/twitter">Authenticate with Twitter</a>  | <a href="/auth/instagram">Authenticate with Instagram</a> | <a href="/auth/youtube">Authenticate with Youtube</a> | <a href="/auth/pinterest">Authenticate with Pinterest</a> | <a href="/auth/linkedin">Authenticate with Linkedin</a>'
   );
 };
 
@@ -34,7 +34,6 @@ exports.youtubeAuth = passport.authenticate("google", {
     "email",
     "https://www.googleapis.com/auth/youtube.readonly",
   ],
-
 });
 
 exports.youtubeAuthcallback = passport.authenticate("google", {
@@ -74,6 +73,15 @@ exports.instagramAuthCallback = passport.authenticate("instagram", {
   failureRedirect: "/",
 });
 exports.instagramCallbackSuccess = (req, res) => {
+  res.redirect("/dashboard");
+};
+
+//Linkedin OAuth Routes
+exports.linkedinAuth = passport.authenticate("linkedin");
+exports.linkedinAuthCallback = passport.authenticate("linkedin", {
+  failureRedirect: "/",
+});
+exports.linkedinAuthCallbackSuccess = (req, res) => {
   res.redirect("/dashboard");
 };
 

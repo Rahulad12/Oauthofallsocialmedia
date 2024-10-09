@@ -54,6 +54,13 @@ router.get(
   authController.instagramCallbackSuccess
 );
 
+//linkedin route
+router.get("/auth/linkedin",authController.linkedinAuth);
+router.get('/auth/linkedin/callback',
+  authController.linkedinAuthCallback,
+  authController.linkedinAuthCallbackSuccess 
+);
+
 // Protected dashboard
 router.get("/dashboard", authController.dashboard);
 

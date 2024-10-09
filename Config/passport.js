@@ -5,6 +5,8 @@ const TwitterStrategy = require("passport-twitter").Strategy;
 const InstagramStrategy = require("passport-instagram").Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
 const PinterestStrategy = require("passport-pinterest").Strategy;
+const LinkedInStrategy = require("passport-linkedin-oauth2").Strategy;
+
 require("dotenv").config();
 
 // Passport strategy for Google OAuth
@@ -13,9 +15,8 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      scope: ['read_public', 'write_public'],
-      callbackURL: process.env.GOOGLE_CALLBACK_URL, // Use the callback URL for Google
-
+      scope: ["read_public", "write_public"],
+      callbackURL: process.env.GOOGLE_CALLBACK_URL,
     },
     (accessToken, refreshToken, profile, done) => {
       // Pass the accessToken to access YouTube API
@@ -67,7 +68,6 @@ passport.use(
       //User.findOrCreate({ twitterId: profile.id }, function (err, user) {
       return cb(null, profile);
     }
-  
   )
 );
 
@@ -85,6 +85,24 @@ passport.use(
     }
     //);
     //}
+  )
+);
+
+//linkedin Outh strategy
+passport.use(
+  new LinkedInStrategy(
+    {
+      clientID: process.env.LINKEDIN_CLIENT_ID,
+      clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
+      callbackURL: process.env.LINKEDIN_CALLBACK_URL,
+      scope: ['openid', 'profile', 'email'], 
+      state: true
+    },
+    function (token, tokenSecret, profile, done) {
+      User.findOrCreate({ linkedinId: profile.id }, function (err, user) {
+        return done(err, user);
+      });
+    }
   )
 );
 
